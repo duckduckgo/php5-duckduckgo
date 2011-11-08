@@ -29,4 +29,4 @@ A pre-generated version of the documentation will be supplied in the near future
 Comments?
 ---------
 Hit me up a message, or file a ticket! :)
-For quicker response, try catching me on IRC: `Purgox` on `irc.freenode.net`.
+For quicker response, try catching me on IRC on `#duckduckgo @ irc.freenode.net`.

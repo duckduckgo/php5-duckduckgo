@@ -2,9 +2,13 @@
 
 /**
  * @file DuckDuckGo/API.php
- * This file provides the base class to interface with the DuckDuckGo API. 
+ * This file provides the base class to interface with the DuckDuckGo API.
  * It will also include any necessary classes.
  * With this interface, you can currently only perform ZeroClickInfo queries.
+ * Simple example:
+ *     $api = new DuckDuckGo\\API();
+ *     $info = $api->zeroClickQuery('Internet Relay Chat');
+ *     echo $info->definition;
  */
 
 namespace DuckDuckGo;
@@ -157,10 +161,3 @@ class API
     }
 
 }
-
-/**
- * @example API.php
- * $api = new DuckDuckGo\API();
- * $info = $api->zeroClickQuery('Internet Relay Chat');
- * echo $info->definition;
- */
