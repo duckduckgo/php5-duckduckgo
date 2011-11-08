@@ -188,7 +188,7 @@ class ZeroClickInfo extends APIResult
                         $relatedTopic = new \stdClass();
                         $relatedTopic->description = $apiRelatedTopic['Text'];
                         $relatedTopic->URL = $apiRelatedTopic['FirstURL'];
-                        $relatedTopic->icon = $apiRelatedTopic['Icon']['URL'];
+                        $relatedTopic->iconURL = $apiRelatedTopic['Icon']['URL'];
 
                         $this->relatedTopics[$subject['Name']][] = $relatedTopic;
                     }
@@ -197,7 +197,7 @@ class ZeroClickInfo extends APIResult
                     $relatedTopic = new \stdClass();
                     $relatedTopic->description = $subject['Text'];
                     $relatedTopic->URL = $subject['FirstURL'];
-                    $relatedTopic->icon = $subject['Icon']['URL'];
+                    $relatedTopic->iconURL = $subject['Icon']['URL'];
 
                     if(!isset($this->relatedTopics['General'])) {
                         $this->relatedTopics['General'] = array();
