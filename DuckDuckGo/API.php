@@ -6,7 +6,7 @@
  * It will also include any necessary classes.
  * With this interface, you can currently only perform ZeroClickInfo queries.
  * Simple example:
- *     $api = new DuckDuckGo\\API();
+ *     $api = new DuckDuckGo\API();
  *     $info = $api->zeroClickQuery('Internet Relay Chat');
  *     echo $info->definition;
  */
@@ -14,8 +14,8 @@
 namespace DuckDuckGo;
 
 /* Include the necessary classes. */
-require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'APIResult.php');
-require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'ZeroClickInfo.php');
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'APIResult.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'ZeroClickInfo.php';
 
 class API
 {
@@ -96,14 +96,14 @@ class API
     {
         $url = $this->constructURL($section, $options);
 
-        if(\function_exists('curl_init')) {
+        if(\extension_loaded('curl')) {
             $curl = \curl_init($url);
             \curl_setopt($curl, CURLOPT_HEADER, FALSE);
             \curl_setopt($curl, CURLOPT_FOLLOWLOCATION, FALSE);
             \curl_setopt($curl, CURLOPT_FRESH_CONNECT, TRUE);
             \curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
 
-            $result = \curl_exec($ch);
+            $result = \curl_exec($curl);
             \curl_close($curl);
 
             return $result;
